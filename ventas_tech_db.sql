@@ -7,9 +7,12 @@
 -- cada venta es de un producto y un cliente puntual)
 
 -- Creo la base de datos
+-- (el IF y el CREATE DATABASE van en lotes separados por GO,
+-- porque SQL Server no permite CREATE DATABASE mezclado con
+-- otras sentencias en el mismo lote)
 IF DB_ID('Ventas_Tech_DB') IS NULL
 BEGIN
-    CREATE DATABASE Ventas_Tech_DB;
+    EXEC('CREATE DATABASE Ventas_Tech_DB');
 END
 GO
 
