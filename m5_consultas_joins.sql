@@ -12,6 +12,8 @@ GO
 -- Cruzo ventas con clientes, productos y categorias para tener en una sola fila
 -- todo lo que necesito: quien compro, que compro, cuanto y de que categoria/ciudad es.
 -- Esta va a ser la tabla principal que despues uso en Power BI.
+-- Hallazgo: la consulta devuelve una fila por cada venta, con categoria y ciudad
+-- coincidiendo correctamente con cada producto y cliente (verificado a mano).
 -- ------------------------------------------------------------
 SELECT
     v.fecha_venta,
@@ -39,6 +41,8 @@ GO
 -- Hago LEFT JOIN desde clientes hacia ventas: asi conservo todos los clientes,
 -- tengan o no ventas. Los que no tienen, quedan con id_venta en NULL, y con
 -- ese filtro los aislo.
+-- Hallazgo: devuelve 1 fila, Sofia Medina (cliente agregado para poder
+-- demostrar el caso, ya que en la carga original no habia ninguno).
 -- ------------------------------------------------------------
 SELECT
     c.nombre,
@@ -59,6 +63,8 @@ GO
 -- Mismo mecanismo que la Consulta 2: LEFT JOIN desde productos hacia ventas,
 -- asi conservo todos los productos tengan o no ventas, y filtro los que
 -- quedaron con id_venta en NULL (sin ninguna coincidencia).
+-- Hallazgo: devuelve 1 fila, Webcam HD Pro (producto agregado para poder
+-- demostrar el caso, ya que en la carga original no habia ninguno).
 -- ------------------------------------------------------------
 SELECT
     p.nombre_producto,
@@ -77,6 +83,8 @@ GO
 -- en dos periodos de tiempo (antes y despues del 1 de mayo de 2024).
 -- Uso UNION ALL y no UNION porque quiero contar cada venta una sola vez,
 -- sin que se eliminen filas aunque coincidan en todos sus valores.
+-- Hallazgo: el primer periodo (marzo-abril) totaliza 8.396, mas del doble
+-- que el segundo periodo (mayo en adelante), que totaliza 3.015.
 -- ------------------------------------------------------------
 SELECT
     canal,
