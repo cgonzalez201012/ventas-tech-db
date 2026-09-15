@@ -116,23 +116,31 @@ INSERT INTO dbo.categorias (id_categoria, nombre_categoria, descripcion) VALUES
     (4, 'Almacenamiento', 'Discos y memorias');
 GO
 
--- clientes (5 registros)
+-- clientes (6 registros)
 INSERT INTO dbo.clientes (id_cliente, nombre, email, ciudad, fecha_registro) VALUES
-    (1, 'Maria Lopez', 'maria@mail.com', 'Buenos Aires', '2024-01-05'),
-    (2, 'Carlos Ruiz',  'carlos@mail.com', 'Cordoba',      '2024-01-10'),
-    (3, 'Ana Gomez',    'ana@mail.com',    'Rosario',      '2024-02-01'),
-    (4, 'Pedro Sanz',   'pedro@mail.com',  'Mendoza',      '2024-02-15'),
-    (5, 'Laura Torres', 'laura@mail.com',  'Tucuman',      '2024-03-01');
+	(1, 'Maria Lopez',  'maria@mail.com',  'Buenos Aires', '2024-01-05'),
+	(2, 'Carlos Ruiz',  'carlos@mail.com', 'Cordoba',      '2024-01-10'),
+	(3, 'Ana Gomez',    'ana@mail.com',    'Rosario',      '2024-02-01'),
+	(4, 'Pedro Sanz',   'pedro@mail.com',  'Mendoza',      '2024-02-15'),
+	(5, 'Laura Torres', 'laura@mail.com',  'Tucuman',      '2024-03-01'),
+	-- Cliente sin ventas, para poder demostrar en el Módulo 5 que el LEFT JOIN
+	-- con IS NULL (clientes sin compras) funciona con un caso real. Los 5
+	-- clientes originales tenían todos al menos una venta.
+	(6, 'Sofia Medina', 'sofia.medina@mail.com', 'Salta',   '2024-02-10');
 GO
 
--- productos (6 registros)
+-- productos (7 registros)
 INSERT INTO dbo.productos (id_producto, nombre_producto, id_categoria, precio, stock, activo) VALUES
-    (1, 'Laptop Pro 15',        1, 1200.00, 15, 1),
-    (2, 'Mouse Inalambrico',    2,   28.00, 80, 1),
-    (3, 'Monitor 4K 27"',       1,  450.00, 12, 1),
-    (4, 'Auriculares BT Pro',   3,  120.00, 35, 1),
-    (5, 'SSD Externo 1TB',      4,  130.00, 18, 1),
-    (6, 'Teclado Mecanico',     2,   95.00, 40, 1);
+	(1, 'Laptop Pro 15',      1, 1200.00, 15, 1),
+	(2, 'Mouse Inalambrico',  2,   28.00, 80, 1),
+	(3, 'Monitor 4K 27"',     1,  450.00, 12, 1),
+	(4, 'Auriculares BT Pro', 3,  120.00, 35, 1),
+	(5, 'SSD Externo 1TB',    4,  130.00, 18, 1),
+	(6, 'Teclado Mecanico',   2,   95.00, 40, 1),
+	-- Producto sin ventas, para poder demostrar en el Módulo 5 que el LEFT JOIN
+	-- con IS NULL (productos sin movimiento) funciona con un caso real. Los 6
+	-- productos originales tenían todos al menos una venta.
+	(7, 'Webcam HD Pro', 1, 85.00, 10, 1);
 GO
 
 -- ventas (10 registros)
