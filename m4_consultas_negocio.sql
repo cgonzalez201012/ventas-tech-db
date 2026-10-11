@@ -29,6 +29,8 @@ GO
 --    en la base (sin romper ninguna Foreign Key), con fechas
 --    distribuidas en abril, mayo y junio de 2024, para ampliar
 --    la muestra y enriquecer el resultado del analisis mensual.
+--    Los INSERT de esas 10 ventas estan en m4_ventas_adicionales.sql
+--    (se corre despues de ventas_tech_db.sql y antes de este archivo).
 -- =========================================================
 
 
@@ -111,9 +113,11 @@ ORDER BY mes;
 -- 1) El producto 1 (Laptop, $1200) genero el mayor total facturado
 --    ($6.000) vendiendo solo 5 unidades, mientras que el producto 2
 --    (Mouse, $28) vendio 22 unidades -la mayor cantidad- pero quedo
---    ultimo en facturacion ($616). El volumen de ventas no es un
---    buen indicador de impacto en los ingresos: conviene priorizar
---    el analisis por facturacion, no por unidades.
+--    5to de 6 productos en facturacion ($616). La Consulta 2 muestra
+--    solo el Top 5, por eso no aparece el ultimo: el producto 5
+--    (SSD Externo 1TB) facturo $520 con 4 unidades. El volumen de
+--    ventas no es un buen indicador de impacto en los ingresos:
+--    conviene priorizar el analisis por facturacion, no por unidades.
 --
 -- 2) Los 5 clientes activos en la base realizaron 4 pedidos cada
 --    uno, sin ningun caso de compra unica. La totalidad de la
