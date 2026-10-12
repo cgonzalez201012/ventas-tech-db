@@ -168,7 +168,7 @@ SELECT * FROM dbo.clientes;
 SELECT * FROM dbo.productos;
 SELECT * FROM dbo.ventas;
 
--- Cuento cuantas filas tiene cada tabla (deberia dar 4, 5, 6 y 10)
+-- Cuento cuantas filas tiene cada tabla (deberia dar 4, 6, 7 y 10)
 SELECT
     (SELECT COUNT(*) FROM dbo.categorias) AS total_categorias,
     (SELECT COUNT(*) FROM dbo.clientes)   AS total_clientes,

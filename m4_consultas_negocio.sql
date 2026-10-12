@@ -119,10 +119,12 @@ ORDER BY mes;
 --    ventas no es un buen indicador de impacto en los ingresos:
 --    conviene priorizar el analisis por facturacion, no por unidades.
 --
--- 2) Los 5 clientes activos en la base realizaron 4 pedidos cada
---    uno, sin ningun caso de compra unica. La totalidad de la
---    cartera de clientes es recurrente, lo que sugiere una buena
---    tasa de retencion con la base de datos actual.
+-- 2) Los 5 clientes con ventas realizaron 4 compras cada uno, en
+--    4 fechas distintas, sin ningun caso de compra unica. Pero la
+--    base tiene 6 clientes: la cliente 6 (Sofia Medina) nunca
+--    compro, asi que no toda la cartera es recurrente. Que los 5
+--    tengan exactamente 4 compras parece un patron de los datos de
+--    ejemplo cargados, por eso no alcanza para hablar de retencion.
 --
 -- 3) De los 4 meses analizados, marzo es el unico que supero el
 --    promedio mensual de facturacion ($2.852), representando el
