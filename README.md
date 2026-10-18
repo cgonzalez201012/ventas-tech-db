@@ -29,10 +29,11 @@ El proyecto se construye con una entrega por módulo del curso, y cada módulo a
 | M6 | Pipeline ETL en Power BI (Power Query / M): limpieza de 4 tablas a partir de `Pipeline_ETL_Dataset.xlsx` | `m6-pipeline-etl/` |
 | M8 | Modelo en Power BI: 4 relaciones 1:N activas, tabla calendario `Dim_Fechas` y 5 medidas core en DAX | `m8-modelo-dax/` |
 | M9 | Uso de IA para documentar y optimizar el análisis: este README salió de una versión generada con IA y corregida a mano | `README.md`, `m9-ia-documentacion/` |
+| M10 | Validación estadística: media, mediana, desviación estándar y outliers (IQR) sobre las 50 ventas de RetailPro, y ajustes al boceto del dashboard | `m10-validacion-estadistica/` |
 
 Los módulos siguientes, hasta el dashboard final, se irán sumando al repositorio.
 
-> **Ojo con el origen de los datos:** la parte SQL (M3 a M5) trabaja con `Ventas_Tech_DB` (20 ventas). Power BI (M6 y M8) **no lee de SQL Server**: parte de `Pipeline_ETL_Dataset.xlsx`, un dataset del curso con más registros (50 ventas en `Fact_Ventas`). Son dos conjuntos de datos distintos. La Consulta 1 de M5 se pensó como tabla base para Power BI, pero en M6 y M8 el modelo se armó con el Excel.
+> **Ojo con el origen de los datos:** la parte SQL (M3 a M5) trabaja con `Ventas_Tech_DB` (20 ventas). Power BI (M6 y M8) **no lee de SQL Server**: parte de `Pipeline_ETL_Dataset.xlsx`, un dataset del curso con más registros (50 ventas en `Fact_Ventas`). Son dos conjuntos de datos distintos. La Consulta 1 de M5 se pensó como tabla base para Power BI, pero en M6 y M8 el modelo se armó con el Excel. En M10 vuelvo a usar las 50 ventas del Excel, pero cargadas en una base nueva de SQL Server (`RetailPro_Validacion`) para poder calcular con SQL.
 
 > **Importante:** los scripts SQL dependen unos de otros y hay que ejecutarlos en un orden fijo. Ver [Cómo ejecutar los scripts SQL](#cómo-ejecutar-los-scripts-sql).
 
@@ -64,7 +65,8 @@ Los módulos siguientes, hasta el dashboard final, se irán sumando al repositor
 ├── m5_consultas_joins.sql
 ├── m6-pipeline-etl/
 ├── m8-modelo-dax/
-└── m9-ia-documentacion/
+├── m9-ia-documentacion/
+└── m10-validacion-estadistica/
 ```
 
 | Archivo / carpeta | Qué hace |
@@ -77,6 +79,7 @@ Los módulos siguientes, hasta el dashboard final, se irán sumando al repositor
 | `m6-pipeline-etl/` | Trabajo de M6: pipeline ETL en Power Query con 4 consultas limpias (`Dim_Clientes`, `Dim_Productos`, `Dim_Categorias`, `Fact_Ventas`), archivos `.pbix`, capturas del perfilado y un README propio con las decisiones de limpieza. Ver [`m6-pipeline-etl/README.md`](m6-pipeline-etl/README.md). |
 | `m8-modelo-dax/` | Trabajo de M8: modelo con 4 relaciones 1:N activas, `Dim_Fechas` y tabla `_Medidas` con 5 medidas core en DAX. Archivo `.pbix` y un README corto. Ver [`m8-modelo-dax/README.md`](m8-modelo-dax/README.md). |
 | `m9-ia-documentacion/` | Trabajo de M9 (uso de IA): la versión original de este README tal como la generó la IA, sin modificar, y la lista de cambios que le hice con la justificación de cada uno. Ver [`m9-ia-documentacion/README.md`](m9-ia-documentacion/README.md). |
+| `m10-validacion-estadistica/` | Trabajo de M10: 3 scripts SQL que cargan las 50 ventas en la base `RetailPro_Validacion` y calculan media, mediana, desviación estándar y outliers con IQR. Ver [`m10-validacion-estadistica/README.md`](m10-validacion-estadistica/README.md). |
 
 ---
 
