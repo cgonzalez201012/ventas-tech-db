@@ -52,6 +52,19 @@ FROM dbo.ventas
 ORDER BY canal;
 GO
 
+-- 2a-4) Cuantas ventas quedan por debajo y por encima de la media
+-- Sirve para ver si el ticket promedio describe a una venta tipica
+-- Esperado: n 50 / 33 por debajo de la media (66.0 %) / 17 por encima
+SELECT
+    COUNT(*)                                                    AS n_ventas,
+    SUM(CASE WHEN v.total_venta < m.media THEN 1 ELSE 0 END)    AS ventas_bajo_la_media,
+    SUM(CASE WHEN v.total_venta > m.media THEN 1 ELSE 0 END)    AS ventas_sobre_la_media,
+    CAST(100.0 * SUM(CASE WHEN v.total_venta < m.media THEN 1 ELSE 0 END) / COUNT(*)
+         AS DECIMAL(5,1))                                       AS pct_bajo_la_media
+FROM dbo.ventas v
+CROSS JOIN (SELECT AVG(total_venta) AS media FROM dbo.ventas) m;
+GO
+
 
 -- ==========================================
 -- 2b) OUTLIERS CON IQR

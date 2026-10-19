@@ -8,8 +8,8 @@ En este módulo validé con estadística los datos de RetailPro antes de seguir 
 |---------|----------|
 | [`m10_00_preparar_datos.sql`](m10_00_preparar_datos.sql) | Crea la base `RetailPro_Validacion` y carga 11 clientes, 12 productos y 50 ventas. Se puede correr de nuevo: borra las tablas y las vuelve a cargar. |
 | [`m10_01_parte1_sucursales.sql`](m10_01_parte1_sucursales.sql) | Parte 1: media, rango y desviación estándar muestral de las sucursales Norte y Sur. |
-| [`m10_02_parte2_retailpro.sql`](m10_02_parte2_retailpro.sql) | Parte 2: media y mediana del ticket (2a), outliers con IQR (2b) y los meses con más ventas (2c). |
-| [`evidencias/`](evidencias) | Las 11 capturas de DBeaver con los resultados de los tres scripts (las mismas que están en el documento de la entrega). |
+| [`m10_02_parte2_retailpro.sql`](m10_02_parte2_retailpro.sql) | Parte 2: media, mediana, dispersión y ventas bajo la media del ticket (2a), outliers con IQR (2b) y los meses con más ventas (2c). |
+| [`evidencias/`](evidencias) | Las 14 capturas de DBeaver con los resultados de los tres scripts (son las del documento de la entrega; en `P2b_02` y `P2b_03` el documento las muestra cortadas en dos filas para que se lean). |
 
 ## Cómo ejecutarlos
 
@@ -32,6 +32,6 @@ La consigna está escrita para PostgreSQL. En SQL Server cambian dos cosas: `PER
 | Qué | Resultado |
 |-----|-----------|
 | Parte 1 | Norte y Sur tienen media 500. Norte: rango 20, desvío 7,91. Sur: rango 1.150, desvío 518,41. |
-| Ticket (2a) | Media 951,56 y mediana 450,00 (50 ventas). |
+| Ticket (2a) | Media 951,56 y mediana 450,00 (50 ventas). 33 de las 50 ventas (66,0 %) quedan por debajo de la media. |
 | Outliers (2b) | Q1 340,50, Q3 1.283,75, IQR 943,25, límites −1.074,38 y 2.698,63. 3 ventas outlier (1030, 1048 y 1021), todas legítimas: 12.240 de 47.578 (25,7 %). |
-| Meses (2c) | 3 de los 4 meses con más ventas dependen de una sola venta outlier. |
+| Meses (2c) | 3 de los 5 meses con más ventas dependen de una sola venta outlier. |
