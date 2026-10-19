@@ -1,6 +1,6 @@
 -- Entrega 10: Validacion estadistica del proyecto
 -- Script 0: dejo cargados los datos de RetailPro para poder calcular con SQL
--- Motor: SQL Server (T-SQL)
+-- Motor: SQL Server (T-SQL), probado en DBeaver
 --
 -- Los datos salen del Excel del curso (Pipeline_ETL_Dataset.xlsx), con la misma
 -- limpieza que hice en M6 (Power Query):

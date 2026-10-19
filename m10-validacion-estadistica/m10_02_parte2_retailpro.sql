@@ -1,5 +1,5 @@
 -- Entrega 10 - Parte 2: validacion estadistica de RetailPro (tabla ventas, columna total_venta)
--- Motor: SQL Server (T-SQL)
+-- Motor: SQL Server (T-SQL), probado en DBeaver
 -- Antes hay que haber corrido m10_00_preparar_datos.sql (carga las 50 ventas).
 --
 -- Las consultas de la consigna estan escritas para PostgreSQL. En SQL Server cambian dos cosas:

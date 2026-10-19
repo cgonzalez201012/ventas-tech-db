@@ -1,5 +1,5 @@
 -- Entrega 10 - Parte 1: caso guiado de las dos sucursales (Norte y Sur)
--- Motor: SQL Server (T-SQL)
+-- Motor: SQL Server (T-SQL), probado en DBeaver
 --
 -- Datos de la consigna (ventas diarias de 5 dias laborales, en USD):
 --   Norte: 500, 510, 490, 505, 495

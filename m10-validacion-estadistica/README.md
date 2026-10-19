@@ -9,6 +9,7 @@ En este módulo validé con estadística los datos de RetailPro antes de seguir 
 | [`m10_00_preparar_datos.sql`](m10_00_preparar_datos.sql) | Crea la base `RetailPro_Validacion` y carga 11 clientes, 12 productos y 50 ventas. Se puede correr de nuevo: borra las tablas y las vuelve a cargar. |
 | [`m10_01_parte1_sucursales.sql`](m10_01_parte1_sucursales.sql) | Parte 1: media, rango y desviación estándar muestral de las sucursales Norte y Sur. |
 | [`m10_02_parte2_retailpro.sql`](m10_02_parte2_retailpro.sql) | Parte 2: media y mediana del ticket (2a), outliers con IQR (2b) y los meses con más ventas (2c). |
+| [`evidencias/`](evidencias) | Las 11 capturas de DBeaver con los resultados de los tres scripts (las mismas que están en el documento de la entrega). |
 
 ## Cómo ejecutarlos
 
